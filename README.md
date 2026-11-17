@@ -13,7 +13,8 @@ A starting point for every new repository under this account: the conventions we
 | [ROADMAP.md](ROADMAP.md) | Skeleton: what the project is, what it is not, now, next, later |
 | [docs/](docs/index.md) | Skeleton for the user guide and the technical docs, with a decision log |
 | [scripts/check-docs.mjs](scripts/check-docs.mjs) | Checks that every link and heading link in the docs works and that the index lists every page |
-| [.github/](.github) | Pull request template and the CI workflow |
+| [scripts/version.mjs](scripts/version.mjs) | Changes the version in every file at once, and checks a release tag against it |
+| [.github/](.github) | Pull request template, the CI workflow and the release workflow (draft releases) |
 
 ## Start a project from it
 
@@ -24,8 +25,9 @@ A starting point for every new repository under this account: the conventions we
 ## Keep it healthy
 
 ```
-node --test "scripts/*.test.mjs"   # tests of the docs check
+node --test "scripts/*.test.mjs"   # tests of the scripts
 node scripts/check-docs.mjs        # the docs check itself (needs Node 20 or newer)
+node scripts/version.mjs show      # the version found in every file listed in version-files.json
 ```
 
 Both run in CI on every pull request. See [Contributing](docs/contributing.md).

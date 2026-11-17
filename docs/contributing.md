@@ -27,14 +27,49 @@ A *workflow* is a recipe in `.github/workflows/` that GitHub runs on its own com
 
 ## Making a release
 
-The release steps depend on the project. The shape to aim for:
+The version number is written in several places (a manifest, a lock file, an installer setting). [scripts/version.mjs](../scripts/version.mjs) keeps them equal, and the **Release** workflow (`release.yml`) refuses a tag that disagrees with them.
 
-1. **One command changes the version everywhere** it is written (the project's manifest, lock files, installer settings).
+1. **Choose the number.** New features raise the middle number, only fixes raise the last one (`1.2.0`, `1.2.1`). Change it everywhere at once:
+
+   ```
+   node scripts/version.mjs set 1.2.0
+   ```
+
 2. Send that change as a pull request and merge it when CI is green.
-3. Tag the merged `main` (`v1.2.0`) and push the tag.
-4. **A workflow checks that the tag matches the version** and stops if not; then it builds and creates a **draft release** to review and publish.
+3. Tag the merged `main` and push the tag:
 
-Number the versions `major.minor.patch`: new features raise the middle number, only fixes raise the last one.
+   ```
+   git checkout main
+   git pull
+   git tag v1.2.0
+   git push origin v1.2.0
+   ```
+
+4. Open **Actions** to watch the *Release* run. If its first step fails, the tag and the version disagree: delete the tag (`git push --delete origin v1.2.0` and `git tag -d v1.2.0`), fix the version and tag again.
+5. Under **Releases**, a **draft** appears with notes made from the merged pull requests. Edit it and press **Publish**, or leave it as a draft if you do not publish binaries.
+
+Useful commands: `node scripts/version.mjs show` prints the version in every file, `node scripts/version.mjs check` fails if they differ.
+
+### Telling the script where the version lives
+
+List the files in [version-files.json](../version-files.json). Each entry is a file and how to find the version in it:
+
+```json
+{
+  "files": [
+    { "file": "package.json", "kind": "json" },
+    { "file": "Cargo.toml", "kind": "toml", "section": "package" },
+    { "file": "pyproject.toml", "kind": "toml", "section": "project" },
+    { "file": "mypackage/__init__.py", "kind": "regex", "pattern": "(__version__ = \")([^\"]+)(\")" }
+  ]
+}
+```
+
+- `json`: the first `"version": "…"` in the file (`package.json`, `tauri.conf.json`).
+- `toml`: `version = "…"` inside the named `[section]` (`[package]` in `Cargo.toml`, `[project]` in `pyproject.toml`).
+- `regex`: your own pattern with three groups, *(text before)(the version)(text after)*.
+
+Lock files (`package-lock.json`, `Cargo.lock`) can be added the same way when they carry the project's own version. The script edits the text and never rewrites a file, so line endings and every other line stay as they were. The template ships with an empty list: until you fill it in, `check` says so and the release workflow stops.
 
 ## Keeping the docs healthy
 

@@ -12,7 +12,7 @@ Every page of the documentation. The docs check fails if a page is missing here.
 
 | Page | What it covers |
 |---|---|
-| [Contributing](contributing.md) | How changes are made, what CI does, how a release is made |
+| [Contributing](contributing.md) | How changes are made, what CI does, how a release is made and where the version lives |
 | [Architecture](technical/architecture.md) | How the code is organised |
 | [File format](technical/file-format.md) | The saved data, its versions and the compatibility rules |
 | [Tests](technical/testing.md) | How the project is tested and what CI checks |
