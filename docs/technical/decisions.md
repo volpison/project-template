@@ -43,3 +43,9 @@ Left out: publishing automatically, and any particular build: each project adds 
 Decided: a refactor that changes no behaviour is its own pull request.
 Why: a pure move is easy to check (the tests do not change); a mixed one hides mistakes.
 Left out: "while I am here" fixes in a move.
+
+## Recipes are copy-in, not built in (2026-11)
+
+Decided: stack-specific material (Tauri + Svelte, Python desktop) lives in `docs/recipes/` and inactive workflow files in `recipes/`; the template's active CI only checks docs.
+Why: the template stays language-neutral and green on its own, and a project copies only what its stack needs. The older projects' code was not carried over, only their habits.
+Left out: a full starter app per stack. Add one only when two projects have needed the same scaffolding.

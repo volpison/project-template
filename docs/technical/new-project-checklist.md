@@ -15,6 +15,7 @@ After creating a repository from this template ("Use this template → Create a 
 
 ## Make CI real
 
+- [ ] Pick a [stack recipe](../recipes/README.md) if one fits, and copy its workflow files from `recipes/` into `.github/workflows/` (then delete the `recipes/` folder and `docs/recipes/` pages you do not need, and their index entries).
 - [ ] Add the project's test and build jobs to `.github/workflows/ci.yml`, on the platform users really have.
 - [ ] On GitHub: **Settings → Branches**, protect `main` (require a pull request and a passing CI run).
 - [ ] Check that a pull request shows the CI result before it can be merged.
@@ -23,6 +24,8 @@ After creating a repository from this template ("Use this template → Create a 
 
 - [ ] Version the data format (`schema_version`, `file_type`, `min_reader_version`) if the project saves files.
 - [ ] List the files that hold the version in `version-files.json`, so a release is one command and the tag is checked (see [Contributing](../contributing.md#making-a-release)).
+- [ ] Keep `CHANGELOG.md` current (a line per user-visible change under *Unreleased*).
+- [ ] Edit the issue forms in `.github/ISSUE_TEMPLATE/` to ask what *this* project needs (areas, versions, logs), or delete them for a private project.
 - [ ] Say in the docs where users' files are kept, how they are backed up and how to get work back.
 
 ## Keep it healthy

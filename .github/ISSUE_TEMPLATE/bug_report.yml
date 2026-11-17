@@ -1,0 +1,47 @@
+name: Bug report
+description: Something does not work, gives a wrong result, or freezes
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please do not attach files you do not have the right to share.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Choose ...
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: The release you downloaded, or the top entry of CHANGELOG.md.
+      placeholder: v1.0.0
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: Operating system and anything else that matters (for example Python version).
+    validations:
+      required: false
+  - type: textarea
+    id: log
+    attributes:
+      label: Error text or log
+      description: Paste any error shown in the window or in a log file.
+      render: text
+    validations:
+      required: false
