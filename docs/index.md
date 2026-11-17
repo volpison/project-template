@@ -18,3 +18,6 @@ Every page of the documentation. The docs check fails if a page is missing here.
 | [Tests](technical/testing.md) | How the project is tested and what CI checks |
 | [Decision log](technical/decisions.md) | What was decided, and why |
 | [New-project checklist](technical/new-project-checklist.md) | What to do after creating a repository from this template |
+| [Stack recipes](recipes/README.md) | Starting points for a Tauri + Svelte app and a Python desktop tool |
+| [Tauri + Svelte recipe](recipes/tauri-svelte.md) | Layout, commands, version files, CI and release for a Tauri app |
+| [Python desktop recipe](recipes/python-desktop.md) | Layout, habits, version files and CI for a Python tool |

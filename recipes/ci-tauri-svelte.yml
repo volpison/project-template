@@ -1,0 +1,41 @@
+# Inactive recipe. Copy these steps into .github/workflows/ci.yml next to the `docs` job.
+# Source: Fabulator's CI. Not run from the template repository: check it in a throwaway repo first.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Install JS dependencies
+        run: npm install
+
+      - name: JS tests
+        run: npm test
+
+      - name: Build the front end
+        run: npm run build
+
+      - name: Rust tests (compiles the whole Tauri backend)
+        run: cargo test --manifest-path src-tauri/Cargo.toml
+
+      # Informational: shows Svelte/TypeScript warnings without failing the build.
+      - name: Svelte type check
+        run: npm run check
+        continue-on-error: true

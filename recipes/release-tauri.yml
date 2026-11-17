@@ -1,0 +1,57 @@
+# Inactive recipe. Replaces .github/workflows/release.yml for a Tauri project.
+# Builds the Windows installer on a tag like v1.2.0 and attaches it to a DRAFT release.
+# Source: Fabulator's release workflow. Not run from the template repository: try it on a throwaway tag first.
+# Replace <App name> below.
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      # Stop early if the tag and the app's version disagree.
+      - name: Check the tag matches the app version
+        env:
+          TAG: ${{ github.ref_name }} # passed as a variable, never pasted into the command
+        run: node scripts/version.mjs check "$env:TAG"
+
+      - name: Docs check
+        run: node scripts/check-docs.mjs
+
+      - run: npm install
+
+      # Never ship an installer from code whose tests fail.
+      - name: JS tests
+        run: npm test
+
+      - uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: ${{ github.ref_name }}
+          releaseName: "<App name> ${{ github.ref_name }}"
+          releaseBody: |
+            Windows installer (setup .exe or .msi).
+
+            The installer is not code-signed, so Windows SmartScreen may warn on first run:
+            choose "More info", then "Run anyway".
+          releaseDraft: true
+          prerelease: false

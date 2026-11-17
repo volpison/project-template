@@ -35,7 +35,7 @@ The version number is written in several places (a manifest, a lock file, an ins
    node scripts/version.mjs set 1.2.0
    ```
 
-2. Send that change as a pull request and merge it when CI is green.
+2. Move the *Unreleased* entries of [CHANGELOG.md](../CHANGELOG.md) under the new version and date. Send that change as a pull request and merge it when CI is green.
 3. Tag the merged `main` and push the tag:
 
    ```
