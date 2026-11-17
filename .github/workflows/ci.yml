@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 22
 
-      - name: Docs check tests
+      - name: Script tests (docs check, version script)
         run: node --test "scripts/*.test.mjs"
 
       - name: Docs links and index

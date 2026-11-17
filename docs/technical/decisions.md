@@ -32,6 +32,12 @@ Decided: when a project learns a new kind of document, all of its data lives und
 Why: kinds do not mix their lists with the shared parts, and an older version that does not know the kind leaves the key untouched.
 Left out: moving every kind into a common `world` and `document` layout; it would touch everything without adding a feature, and a minimum reader version makes it safe to do later as its own step.
 
+## Releases are one command and a tag check (2026-11)
+
+Decided: the version is changed everywhere by one command (`node scripts/version.mjs set`), and the release workflow refuses a tag that does not match. It creates a draft release; a person publishes it.
+Why: Fabulator keeps its version in five files; they drifted before this existed, and an installer was once named from the wrong one. A draft keeps the last decision with a person.
+Left out: publishing automatically, and any particular build: each project adds its own build steps to the workflow.
+
 ## Pure moves and behaviour changes are separate pull requests (2026-11)
 
 Decided: a refactor that changes no behaviour is its own pull request.

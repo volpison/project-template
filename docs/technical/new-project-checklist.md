@@ -22,7 +22,7 @@ After creating a repository from this template ("Use this template → Create a 
 ## Before the first release
 
 - [ ] Version the data format (`schema_version`, `file_type`, `min_reader_version`) if the project saves files.
-- [ ] Decide how the version number is kept in one place, and make releases one command (see [Contributing](../contributing.md)).
+- [ ] List the files that hold the version in `version-files.json`, so a release is one command and the tag is checked (see [Contributing](../contributing.md#making-a-release)).
 - [ ] Say in the docs where users' files are kept, how they are backed up and how to get work back.
 
 ## Keep it healthy
