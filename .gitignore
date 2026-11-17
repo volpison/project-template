@@ -1,0 +1,27 @@
+# Operating system and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*.suo
+
+# Logs and local files
+logs/
+*.log
+*.local
+.env
+.env.*
+!.env.example
+
+# Dependencies and build output (the project's own stack may add more)
+node_modules/
+dist/
+build/
+target/
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
