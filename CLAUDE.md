@@ -4,7 +4,8 @@ Read [CONVENTIONS.md](CONVENTIONS.md) first; it is short. The rules that matter 
 
 - **Branch and pull request.** Never write to `main`. Work on a `claude/<topic>` branch, one topic per pull request. Describe what changed and why, add a **Check before merging** list, and say what could not be verified here.
 - **Docs move with code.** User-visible change → `docs/user-guide/`. Structure or data format change → `docs/technical/`. New page → add it to `docs/index.md`. Record decisions in `docs/technical/decisions.md`.
-- **Before pushing:** run the project's tests and `node scripts/check-docs.mjs`; read your own diff.
+- **New source files start with the SPDX copyright and licence lines** (MIT by default, CONVENTIONS §7). Third-party files keep their own notices.
+- **Before pushing:** run the project's tests, `node scripts/check-docs.mjs` and `node scripts/check-headers.mjs`; read your own diff.
 - **Pure moves and behaviour changes are separate pull requests.**
 - **Data formats are promises.** Version them, migrate, keep unknown fields, refuse newer files clearly (CONVENTIONS §3).
 - **Plain words for users:** errors say what happened and what to do next; menu names match the docs.

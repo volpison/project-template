@@ -17,11 +17,14 @@ jobs:
         with:
           node-version: 22
 
-      - name: Script tests (docs check, version script)
+      - name: Script tests (docs check, header check, version script)
         run: node --test "scripts/*.test.mjs"
 
       - name: Docs links and index
         run: node scripts/check-docs.mjs
+
+      - name: Source file headers
+        run: node scripts/check-headers.mjs
 
   # Add the project's tests here. Test on the platform users really have:
   #

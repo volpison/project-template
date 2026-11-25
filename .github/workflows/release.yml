@@ -29,6 +29,9 @@ jobs:
       - name: Docs check
         run: node scripts/check-docs.mjs
 
+      - name: Source file headers
+        run: node scripts/check-headers.mjs
+
       # Add the project's own tests and build here, on the platform users have.
       # Never ship from code whose tests fail.
 

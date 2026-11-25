@@ -36,6 +36,9 @@ jobs:
       - name: Docs check
         run: node scripts/check-docs.mjs
 
+      - name: Source file headers
+        run: node scripts/check-headers.mjs
+
       - run: npm install
 
       # Never ship an installer from code whose tests fail.
