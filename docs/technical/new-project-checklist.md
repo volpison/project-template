@@ -6,7 +6,7 @@ After creating a repository from this template ("Use this template → Create a 
 
 - [ ] Replace the README with the project's own leaflet: what it is, what you can do, how to run it, links.
 - [ ] Fill in [ROADMAP.md](../../ROADMAP.md), above all **What it is not**.
-- [ ] Keep the MIT `LICENSE` (set the year), or choose another: replace the file, set `license` in [license-headers.json](../../license-headers.json), and record the decision. The scripts copied from the template carry MIT headers: as their owner, change them to the new licence, or keep them as MIT (add the MIT text as `scripts/LICENSE` and list them under `exempt`). A private project says so.
+- [ ] Keep the MIT `LICENSE` (set the year), or choose another: replace the file, set `license` in [license-headers.json](../../license-headers.json), and record the decision. The scripts copied from the template stay MIT, headers included: before replacing `LICENSE`, copy it to `scripts/LICENSE`, then list each copied file under `exempt` (`scripts/check-docs.mjs`, `scripts/check-docs.test.mjs`, `scripts/check-headers.mjs`, `scripts/check-headers.test.mjs`, `scripts/version.mjs`, `scripts/version.test.mjs`). Do not exempt the whole folder, so new scripts are still checked. A private project says so.
 - [ ] Replace [Getting started](../user-guide/getting-started.md) with the project's first steps.
 - [ ] Write [Architecture](architecture.md): layers, folders, how to add a feature.
 - [ ] If the project saves its own files, fill in [File format](file-format.md) before the first release; if not, delete that page and its index entry.

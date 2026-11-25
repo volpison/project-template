@@ -28,7 +28,7 @@ A starting point for every new repository under this account: the conventions we
 
 ```
 node --test "scripts/*.test.mjs"   # tests of the scripts
-node scripts/check-docs.mjs        # the docs check itself (needs Node 20 or newer)
+node scripts/check-docs.mjs        # the docs check itself (needs Node 20.11 or newer)
 node scripts/check-headers.mjs     # the SPDX lines of source files
 node scripts/version.mjs show      # the version found in every file listed in version-files.json
 ```

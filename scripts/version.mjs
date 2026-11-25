@@ -9,7 +9,7 @@
 //   node scripts/version.mjs check v1.2.0         fail unless they all equal the tag (the release workflow runs this)
 //
 // Which files hold the version is listed in version-files.json (see docs/contributing.md).
-// No dependencies (Node 20 or newer). The functions are exported and tested in scripts/version.test.mjs.
+// No dependencies (Node 20.11 or newer). The functions are exported and tested in scripts/version.test.mjs.
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";

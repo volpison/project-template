@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Nick Volpison (aka Nelson Volpiano Neto) and contributors
 // SPDX-License-Identifier: MIT
 
-// Checks the documentation so it cannot quietly rot. No dependencies (Node 20 or newer).
+// Checks the documentation so it cannot quietly rot. No dependencies (Node 20.11 or newer).
 //
 //   node scripts/check-docs.mjs
 //

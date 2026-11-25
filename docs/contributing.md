@@ -73,7 +73,7 @@ Lock files (`package-lock.json`, `Cargo.lock`) can be added the same way when th
 
 ## Source file headers
 
-New source files start with the two SPDX lines ([the rule](../CONVENTIONS.md#7-licence-and-file-headers)). `node scripts/check-headers.mjs` lists the files that lack them, and CI runs it. The licence it expects and the paths it skips are in [license-headers.json](../license-headers.json).
+New source files start with the two SPDX lines ([the rule](../CONVENTIONS.md#7-licence-and-file-headers)), in the comment block at the top of the file. A new language is added to the list of comment styles in [the check](../scripts/check-headers.mjs). `node scripts/check-headers.mjs` lists the files that lack them, and CI runs it. The licence it expects and the paths it skips are in [license-headers.json](../license-headers.json).
 
 ## Keeping the docs healthy
 
