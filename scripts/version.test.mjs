@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 volpison and contributors
+// SPDX-FileCopyrightText: 2026 Nick Volpison (aka Nelson Volpiano Neto) and contributors
 // SPDX-License-Identifier: MIT
 
 import { test } from "node:test";

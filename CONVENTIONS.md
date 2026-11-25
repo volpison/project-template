@@ -78,7 +78,7 @@ Claude Code works in these repositories. The same rules hold, and a few matter m
 - **Every source file says who owns it and its licence.** Start it with these two lines, in the file's comment style, after a shebang line if there is one:
 
   ```
-  # SPDX-FileCopyrightText: 2026 volpison and contributors
+  # SPDX-FileCopyrightText: 2026 Nick Volpison (aka Nelson Volpiano Neto) and contributors
   # SPDX-License-Identifier: MIT
   ```
 

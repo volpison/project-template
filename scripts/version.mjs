@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 volpison and contributors
+// SPDX-FileCopyrightText: 2026 Nick Volpison (aka Nelson Volpiano Neto) and contributors
 // SPDX-License-Identifier: MIT
 
 // One version number, written in several files. This keeps them equal and checks a release tag.
