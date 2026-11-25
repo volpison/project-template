@@ -72,6 +72,21 @@ Claude Code works in these repositories. The same rules hold, and a few matter m
 
 [CLAUDE.md](CLAUDE.md) is the short version Claude reads in every session.
 
+## 7. Licence and file headers
+
+- **MIT is the default licence.** Each project keeps the full text in `LICENSE`. A project that chooses another says so in its decision log.
+- **Every source file says who owns it and its licence.** Start it with these two lines, in the file's comment style, after a shebang line if there is one:
+
+  ```
+  # SPDX-FileCopyrightText: 2026 volpison and contributors
+  # SPDX-License-Identifier: MIT
+  ```
+
+- The year is the year the file was created; it is not updated every year.
+- **One collective owner line, not a list of people.** Git history records who changed what. Add a line only when code comes from a different owner. No e-mail addresses.
+- **Third-party files keep their own notices.** Never replace them. List third-party and generated code under `exempt` in [license-headers.json](license-headers.json). Files that are not source code, such as JSON, Markdown and workflow files, need no header.
+- [scripts/check-headers.mjs](scripts/check-headers.mjs) fails CI when a header is missing or names another licence.
+
 ## Starting a new project
 
 Use this repository as a template and follow the [new-project checklist](docs/technical/new-project-checklist.md).

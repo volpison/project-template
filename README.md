@@ -14,6 +14,8 @@ A starting point for every new repository under this account: the conventions we
 | [docs/](docs/index.md) | Skeleton for the user guide and the technical docs, with a decision log |
 | [scripts/check-docs.mjs](scripts/check-docs.mjs) | Checks that every link and heading link in the docs works and that the index lists every page |
 | [scripts/version.mjs](scripts/version.mjs) | Changes the version in every file at once, and checks a release tag against it |
+| [scripts/check-headers.mjs](scripts/check-headers.mjs) | Checks the SPDX copyright and licence lines of every source file |
+| [LICENSE](LICENSE) | MIT, the default licence |
 | [.github/](.github) | Pull request template, the CI workflow and the release workflow (draft releases) |
 
 ## Start a project from it
@@ -27,7 +29,8 @@ A starting point for every new repository under this account: the conventions we
 ```
 node --test "scripts/*.test.mjs"   # tests of the scripts
 node scripts/check-docs.mjs        # the docs check itself (needs Node 20 or newer)
+node scripts/check-headers.mjs     # the SPDX lines of source files
 node scripts/version.mjs show      # the version found in every file listed in version-files.json
 ```
 
-Both run in CI on every pull request. See [Contributing](docs/contributing.md).
+The tests and both checks run in CI on every pull request. See [Contributing](docs/contributing.md).

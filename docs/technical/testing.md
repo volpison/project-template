@@ -12,6 +12,7 @@ Write the exact commands, one per line, with what each checks:
 <build>
 node --test "scripts/*.test.mjs"   # tests of the docs check
 node scripts/check-docs.mjs        # links, heading links and the docs index
+node scripts/check-headers.mjs     # SPDX lines in source files
 ```
 
 ## What the tests cover

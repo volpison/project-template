@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 volpison and contributors
+// SPDX-License-Identifier: MIT
+
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { isVersion, loadConfig, problems, readVersions, setVersions } from "./version.mjs";

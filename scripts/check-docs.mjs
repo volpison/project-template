@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 volpison and contributors
+// SPDX-License-Identifier: MIT
+
 // Checks the documentation so it cannot quietly rot. No dependencies (Node 20 or newer).
 //
 //   node scripts/check-docs.mjs

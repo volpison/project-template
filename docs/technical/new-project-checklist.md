@@ -6,7 +6,7 @@ After creating a repository from this template ("Use this template → Create a 
 
 - [ ] Replace the README with the project's own leaflet: what it is, what you can do, how to run it, links.
 - [ ] Fill in [ROADMAP.md](../../ROADMAP.md), above all **What it is not**.
-- [ ] Choose a licence and add a `LICENSE` file (or decide the project is private and say so).
+- [ ] Keep the MIT `LICENSE` (set the year), or choose another: replace the file, set `license` in [license-headers.json](../../license-headers.json), and record the decision. The scripts copied from the template carry MIT headers: as their owner, change them to the new licence, or keep them as MIT (add the MIT text as `scripts/LICENSE` and list them under `exempt`). A private project says so.
 - [ ] Replace [Getting started](../user-guide/getting-started.md) with the project's first steps.
 - [ ] Write [Architecture](architecture.md): layers, folders, how to add a feature.
 - [ ] If the project saves its own files, fill in [File format](file-format.md) before the first release; if not, delete that page and its index entry.

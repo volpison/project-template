@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 volpison and contributors
+// SPDX-License-Identifier: MIT
+
 // One version number, written in several files. This keeps them equal and checks a release tag.
 //
 //   node scripts/version.mjs show                 print the version found in every configured file

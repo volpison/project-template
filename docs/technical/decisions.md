@@ -49,3 +49,9 @@ Left out: "while I am here" fixes in a move.
 Decided: stack-specific material (Tauri + Svelte, Python desktop) lives in `docs/recipes/` and inactive workflow files in `recipes/`; the template's active CI only checks docs.
 Why: the template stays language-neutral and green on its own, and a project copies only what its stack needs. The older projects' code was not carried over, only their habits.
 Left out: a full starter app per stack. Add one only when two projects have needed the same scaffolding.
+
+## MIT by default, with SPDX lines in every source file (2026-11)
+
+Decided: projects use the MIT licence unless they say otherwise, and each source file starts with `SPDX-FileCopyrightText` and `SPDX-License-Identifier`; `scripts/check-headers.mjs` checks this in CI.
+Why: a file copied elsewhere still says who owns it and under which licence, and a rule nobody checks drifts.
+Left out: a list of contributors in each file (Git history has it) and full REUSE compliance (a `LICENSES/` folder and licensing information for docs, data and images). Revisit if a project mixes licences or must pass the REUSE linter.

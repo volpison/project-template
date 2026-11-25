@@ -71,6 +71,10 @@ List the files in [version-files.json](../version-files.json). Each entry is a f
 
 Lock files (`package-lock.json`, `Cargo.lock`) can be added the same way when they carry the project's own version. The script edits the text and never rewrites a file, so line endings and every other line stay as they were. The template ships with an empty list: until you fill it in, `check` says so and the release workflow stops.
 
+## Source file headers
+
+New source files start with the two SPDX lines ([the rule](../CONVENTIONS.md#7-licence-and-file-headers)). `node scripts/check-headers.mjs` lists the files that lack them, and CI runs it. The licence it expects and the paths it skips are in [license-headers.json](../license-headers.json).
+
 ## Keeping the docs healthy
 
 - A user-facing change updates `docs/user-guide/`; a change to how the project is built or to its data format updates `docs/technical/`.
